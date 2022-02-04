@@ -4,10 +4,6 @@
     <title>Posts on Haozheng Lin</title>
     <link>https://heizie.github.io/posts/</link>
     <description>Recent content in Posts on Haozheng Lin</description>
-    <image>
-      <url>https://heizie.github.io/papermod-cover.png</url>
-      <link>https://heizie.github.io/papermod-cover.png</link>
-    </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Feb 2022 17:55:33 +0100</lastBuildDate><atom:link href="https://heizie.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +13,7 @@
       <pubDate>Fri, 04 Feb 2022 17:55:33 +0100</pubDate>
       
       <guid>https://heizie.github.io/posts/masterthesis/</guid>
-      <description>bla bla bla</description>
+      <description>Abstract Vision-based robotic grasp detection is an important fundamental element in the bin-picking tasks. However, the existing methods of vision-based robotic grasp detection are not sufficient to handle the flexible geometries of deformable linear objects, such as cables. Therefore a new solution for detecting cables in an application scene is proposed, which consists of a Swin Transformer with deformable convolutional layers as the backbone network, the feature pyramid network as neck, and Hybrid Task Cascade as RoI head.</description>
     </item>
     
     <item>
