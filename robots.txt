@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://heizie.github.io/sitemap.xml
