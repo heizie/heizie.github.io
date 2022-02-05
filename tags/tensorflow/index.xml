@@ -1,21 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Haozheng Lin</title>
-    <link>https://heizie.github.io/</link>
-    <description>Recent content on Haozheng Lin</description>
+    <title>Tensorflow on Haozheng Lin</title>
+    <link>https://heizie.github.io/tags/tensorflow/</link>
+    <description>Recent content in Tensorflow on Haozheng Lin</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Dec 2021 10:00:00 +0100</lastBuildDate><atom:link href="https://heizie.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Instance Segmentation for Application to Deformable Linear Objects</title>
-      <link>https://heizie.github.io/posts/masterthesis/</link>
-      <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
-      
-      <guid>https://heizie.github.io/posts/masterthesis/</guid>
-      <description>Abstract For detecting deformable linear objects (DLO), such as cables, CNN based methods are insufficient for industrial use, such as for bin picking task. In this paper, based on various baseline model from state of the art (s.o.t.a), the difficulties of detecting cables are found, and depends on those, we&amp;rsquo;ve developed a combination of a 2 stage vision Transformer with HTC framework (Fig. 1) to reach the best performance of detecting cable with s.</description>
-    </item>
-    
+    <lastBuildDate>Sun, 01 Nov 2020 11:00:00 +0100</lastBuildDate><atom:link href="https://heizie.github.io/tags/tensorflow/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Image-based tracking of instruments of a laparoscopic manipulator system</title>
       <link>https://heizie.github.io/posts/semesterarbeit/</link>

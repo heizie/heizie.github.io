@@ -5,6 +5,97 @@
     <link>https://heizie.github.io/tags/</link>
     <description>Recent content in Tags on Haozheng Lin</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://heizie.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Dec 2021 10:00:00 +0100</lastBuildDate><atom:link href="https://heizie.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>computer vision</title>
+      <link>https://heizie.github.io/tags/computer-vision/</link>
+      <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>deep learning</title>
+      <link>https://heizie.github.io/tags/deep-learning/</link>
+      <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Detectron 2</title>
+      <link>https://heizie.github.io/tags/detectron-2/</link>
+      <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/detectron-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DLO</title>
+      <link>https://heizie.github.io/tags/dlo/</link>
+      <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/dlo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>instance segmentation</title>
+      <link>https://heizie.github.io/tags/instance-segmentation/</link>
+      <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/instance-segmentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pytorch</title>
+      <link>https://heizie.github.io/tags/pytorch/</link>
+      <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/pytorch/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vision transformer</title>
+      <link>https://heizie.github.io/tags/vision-transformer/</link>
+      <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/vision-transformer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>medical instrument tracking</title>
+      <link>https://heizie.github.io/tags/medical-instrument-tracking/</link>
+      <pubDate>Sun, 01 Nov 2020 11:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/medical-instrument-tracking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tensor RT</title>
+      <link>https://heizie.github.io/tags/tensor-rt/</link>
+      <pubDate>Sun, 01 Nov 2020 11:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/tensor-rt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tensorflow</title>
+      <link>https://heizie.github.io/tags/tensorflow/</link>
+      <pubDate>Sun, 01 Nov 2020 11:00:00 +0100</pubDate>
+      
+      <guid>https://heizie.github.io/tags/tensorflow/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

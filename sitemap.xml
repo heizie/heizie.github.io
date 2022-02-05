@@ -2,20 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://heizie.github.io/tags/computer-vision/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/tags/deep-learning/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/tags/detectron-2/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/tags/dlo/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
+  </url><url>
     <loc>https://heizie.github.io/</loc>
-    <lastmod>2022-02-04T17:55:33+01:00</lastmod>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/tags/instance-segmentation/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://heizie.github.io/posts/masterthesis/</loc>
-    <lastmod>2022-02-04T17:55:33+01:00</lastmod>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://heizie.github.io/posts/</loc>
-    <lastmod>2022-02-04T17:55:33+01:00</lastmod>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://heizie.github.io/posts/semesterarbeit/</loc>
-    <lastmod>2022-02-04T15:59:35+01:00</lastmod>
-  </url><url>
-    <loc>https://heizie.github.io/categories/</loc>
+    <loc>https://heizie.github.io/tags/pytorch/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://heizie.github.io/tags/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/tags/vision-transformer/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/posts/semesterarbeit/</loc>
+    <lastmod>2020-11-01T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/tags/medical-instrument-tracking/</loc>
+    <lastmod>2020-11-01T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/tags/tensor-rt/</loc>
+    <lastmod>2020-11-01T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/tags/tensorflow/</loc>
+    <lastmod>2020-11-01T11:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://heizie.github.io/categories/</loc>
   </url>
 </urlset>
