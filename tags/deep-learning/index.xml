@@ -13,7 +13,7 @@
       <pubDate>Wed, 01 Dec 2021 10:00:00 +0100</pubDate>
       
       <guid>https://heizie.github.io/posts/masterthesis/</guid>
-      <description>Abstract For detecting deformable linear objects (DLO), such as cables, CNN based methods are insufficient for industrial use, such as for bin picking task. In this paper, based on various baseline model from state of the art (s.o.t.a), the difficulties of detecting cables are found, and depends on those, we&amp;rsquo;ve developed a combination of a 2 stage vision Transformer with HTC framework (Fig. 1) to reach the best performance of detecting cable with s.</description>
+      <description>Abstract For detecting deformable linear objects (DLO), such as cables, CNN-based methods are insufficient for industrial use, such as for bin-picking tasks. In this paper, based on testing various baseline models from state of the art (s.o.t.a), the reasons for flawless while detecting cables are found and depending on those, we&amp;rsquo;ve developed a combination of a 2 stage vision Transformer with HTC framework (Fig. 1) as an example to reach the best performance of detecting cable with s.</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Sun, 01 Nov 2020 11:00:00 +0100</pubDate>
       
       <guid>https://heizie.github.io/posts/semesterarbeit/</guid>
-      <description>Abstract For avoiding collision while operating with articulate laparoscopic manipulator system, the position of the instruments should be provided in real-time. Our proposed method provide a reasonable solution for instrument tracking in vivo.   What, How, Results What  A CNN (moded U-Net) based for detecting medical instrument in vivo using binary distribution and gaussian distribution as label (Fig. 1)         Fig. 1 Labeling of the joins      How  Transformed the model to FP16-format with TensorRT, and loaded by C++ script Accelerated the support-algorithms  Results  Speed optimization: from 8.</description>
+      <description>Abstract For avoiding collision while operating with articulate laparoscopic manipulator system, the position of the instruments should be provided in real-time. Our proposed method provides a reasonable solution for instrument tracking in vivo.   What, How, Results What  A CNN (moded U-Net) based for detecting medical instruments in vivo using binary distribution and gaussian distribution as the label (Fig. 1)         Fig.</description>
     </item>
     
   </channel>

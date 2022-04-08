@@ -13,7 +13,7 @@
       <pubDate>Sun, 01 Nov 2020 11:00:00 +0100</pubDate>
       
       <guid>https://heizie.github.io/posts/semesterarbeit/</guid>
-      <description>Abstract For avoiding collision while operating with articulate laparoscopic manipulator system, the position of the instruments should be provided in real-time. Our proposed method provide a reasonable solution for instrument tracking in vivo.   What, How, Results What  A CNN (moded U-Net) based for detecting medical instrument in vivo using binary distribution and gaussian distribution as label (Fig. 1)         Fig. 1 Labeling of the joins      How  Transformed the model to FP16-format with TensorRT, and loaded by C++ script Accelerated the support-algorithms  Results  Speed optimization: from 8.</description>
+      <description>Abstract For avoiding collision while operating with articulate laparoscopic manipulator system, the position of the instruments should be provided in real-time. Our proposed method provides a reasonable solution for instrument tracking in vivo.   What, How, Results What  A CNN (moded U-Net) based for detecting medical instruments in vivo using binary distribution and gaussian distribution as the label (Fig. 1)         Fig.</description>
     </item>
     
   </channel>
