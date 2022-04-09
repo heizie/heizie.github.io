@@ -62,8 +62,8 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://heizie.github.io/posts/table_terminal/" />
 <meta property="og:image" content="https://heizie.github.io/images/table_terminal/front.JPG" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-03-29T16:02:16&#43;02:00" />
-<meta property="article:modified_time" content="2022-03-29T16:02:16&#43;02:00" />
+<meta property="article:published_time" content="2022-04-09T16:02:16&#43;02:00" />
+<meta property="article:modified_time" content="2022-04-09T16:02:16&#43;02:00" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://heizie.github.io/images/table_terminal/front.JPG" />
@@ -101,11 +101,11 @@
   "keywords": [
     "After Work", "Home Assistant", "ESPHome", "ESP8266", "BME680", "MVG"
   ],
-  "articleBody": "Abstract I’ve already built a smart home system based on Home Assistant. The most important task is showing the states of both bathrooms‘ doors sensors because I don’t want to physically check them just like checking other dudes' excretion duration… And sometimes is just too lazy to take out the phone and check the next bus to the city center, or just too lazy to check the real feel temperature.\nThere is. An ESPHome-based desktop terminal, which shows all needed information.\nComponents The terminal is built based on Wemos D1 Mini, which is using ESP8266 as the main controller. It is conntected with a BME 680 sensor, a ssd1306 OLED, two led for showing doors' states and a button.\nOLED burn-in protection If the normal blue OLED display keeps showing something similar, the pixel of it might be damaged. Therefore, we can let it display some sort of display protection animation or set some mechanism to shut the display down. The funniest thing is, that we have everything to make the display show animation. But the display is way too rubish…the refresh rate, the low resolution. It doesn’t deserve it. So in my third version, I’ve added a button to change the pages of the display and after 10 seconds, the display is shut down.\nPull-up resistor As you might know, the input signal might be disturbed, although it is connected directly by wire. Therefore, we should use a pull-up resistor, which could keep the GPIO voltage always high level. It just simply connects the 3.3v to the input GPIO through a 10 KOhm resistor. If someone presses the button, and because the button resistance is way smaller than the 10KOhm resistor, so the input GPIO voltage is forced to become low level, just like shortcut the GPIO direct to the ground. As an alternative, Wemos D1 Mini provides a build-in pull-up resistor at pin D3 and D4 (D4 with onboard LED). We can also activate them with configs.\nSome dumb things about the timer in ESPHome Timer Normally, once the program is interrupted by pressing the button, another program should run. In our case, ideally, should be either “turn on the display and show the first page, timer initialized” or “switch to the next page, timer refreshed 10 sec.”. However, ESPHome provides only an initializor for the timer. If we keep using  - delay: 10 s after button pressing, tones of the timer are created…So, save some hair for the future. Just set up a timer once the button is pressed…\nbinary_sensor: - platform: gpio pin: 14 id: display_button name: \"display button\" on_press: then: - if: condition: lambda: return id(flag_dis) == 0; # use global var flag_dis to distinguish the presses then: - display.page.show: page1 - globals.set: id: flag_dis value: '1' - logger.log: \"10s timer is set\" - delay: 10 s - display.page.show: page_off - globals.set: id: flag_dis value: '0' - logger.log: \"time's up\" else : display.page.show_next: terminal_display Bugs of display contents? I’ve seen an official example, which uses lambda function to determine the display content.\ndisplay: - platform: ... # ... lambda: |- if (id(my_binary_sensor).state) { it.print(0, 0, id(my_font), \"state: ON\"); } else { it.print(0, 0, id(my_font), \"state: OFF\"); } // Shorthand: it.printf(0, 0, id(my_font), \"State: %s\", id(my_binary_sensor).state ? \"ON\" : \"OFF\"); My suggestion is, don’t do that. Just in my case, it will crash your program in a couple of hours. You could just simply create a new page for shutting down the display\ndisplay: - platform: ssd1306_i2c model: \"SSD1306 128x64\" id: terminal_display pages: - id: page_off # page to shut down the display lambda: |- it.fill(COLOR_OFF); - id: page1 lambda: |- it.printf(0, 3, id(normal_font), \"1. Bus: %.0f min\", id(display_181_frist).state); it.printf(0, 30, id(normal_font), \"2. Bus: %.0f min\", id(display_181_second).state); - id: page2 lambda: |- it.printf(0, 2, id(normal_font), \"temp. %.01f°C\", id(room_temperature).state); it.printf(0, 30, id(normal_font), \"humid. %.01f%%\", id(room_humidity).state); - id: page3 lambda: |- it.printf(0, 2, id(normal_font), \"%s\", id(weather_display).state.c_str()); it.printf(0, 30, id(normal_font), \"R.F. %.01f°C\", id(display_real_feel).state); Case first version \r\rSecond version    \r\r \r\r    Final version \r\r",
-  "wordCount" : "661",
+  "articleBody": "Abstract I’ve already built a smart home system based on Home Assistant. The most important task is showing the states of both bathrooms‘ doors sensors because I don’t want to physically check them just like checking other dudes' excretion duration… And sometimes is just too lazy to take out the phone and check the next bus to the city center, or just too lazy to check the real feel temperature.\nThere is. An ESPHome-based desktop terminal, which shows all needed information.\nComponents The terminal is built based on Wemos D1 Mini, which is using ESP8266 as the main controller. It is conntected with a BME 680 sensor, a ssd1306 OLED, two led for showing doors' states and a button.\nOLED burn-in protection If the normal blue OLED display keeps showing something similar, the pixel of it might be damaged. Therefore, we can let it display some sort of display protection animation or set some mechanism to shut the display down. The funniest thing is, that we have everything to make the display show animation. But the display is way too rubish…the refresh rate, the low resolution. It doesn’t deserve it. So in my third version, I’ve added a button to change the pages of the display and after 10 seconds, the display is shut down.\nPull-up resistor As you might know, the input signal might be disturbed, although it is connected directly by wire. Therefore, we should use a pull-up resistor, which could keep the GPIO voltage always high level. It just simply connects the 3.3v to the input GPIO through a 10 KOhm resistor. If someone presses the button, and because the button resistance is way smaller than the 10KOhm resistor, so the input GPIO voltage is forced to become low level, just like shortcut the GPIO direct to the ground. As an alternative, Wemos D1 Mini provides a build-in pull-up resistor at pin D3 and D4 (D4 with onboard LED). We can also activate them with configs.\nSome dumb things about the timer in ESPHome Timer Normally, once the program is interrupted by pressing the button, another program should run. In our case, ideally, should be either “turn on the display and show the first page, timer initialized” or “switch to the next page, timer refreshed 10 sec.”. However, ESPHome provides only an initializor for the timer. If we keep using  - delay: 10 s after button pressing, tones of the timer are created…So, save some hair for the future. Just set up a timer once the button is pressed…\nbinary_sensor: - platform: gpio pin: 14 id: display_button name: \"display button\" on_press: then: - if: condition: // use global var flag_dis to distinguish the presses lambda: return id(flag_dis) == 0; then: - display.page.show: page1 - globals.set: id: flag_dis value: '1' - logger.log: \"10s timer is set\" - delay: 10 s - display.page.show: page_off - globals.set: id: flag_dis value: '0' - logger.log: \"time's up\" else : display.page.show_next: terminal_display Bugs of display contents? I’ve seen an official example, which uses lambda function to determine the display content.\ndisplay: - platform: ... # ... lambda: |- if (id(my_binary_sensor).state) { it.print(0, 0, id(my_font), \"state: ON\"); } else { it.print(0, 0, id(my_font), \"state: OFF\"); } // Shorthand: it.printf(0, 0, id(my_font), \"State: %s\", id(my_binary_sensor).state ? \"ON\" : \"OFF\"); My suggestion is, don’t do that. Just in my case, it will crash your program in a couple of hours. You could just simply create a new page for shutting down the display\ndisplay: - platform: ssd1306_i2c model: \"SSD1306 128x64\" id: terminal_display pages: // page to shut down the display - id: page_off lambda: |- it.fill(COLOR_OFF); - id: page1 lambda: |- it.printf(0, 3, id(normal_font), \"1. Bus: %.0f min\", id(display_181_frist).state); it.printf(0, 30, id(normal_font), \"2. Bus: %.0f min\", id(display_181_second).state); - id: page2 lambda: |- it.printf(0, 2, id(normal_font), \"temp. %.01f°C\", id(room_temperature).state); it.printf(0, 30, id(normal_font), \"humid. %.01f%%\", id(room_humidity).state); - id: page3 lambda: |- it.printf(0, 2, id(normal_font), \"%s\", id(weather_display).state.c_str()); it.printf(0, 30, id(normal_font), \"R.F. %.01f°C\", id(display_real_feel).state); Case first version This is some kind of over-engineered design. \r\rSecond version    \r\r \r\r    Final version \r\r",
+  "wordCount" : "668",
   "inLanguage": "en",
-  "image":"https://heizie.github.io/images/table_terminal/front.JPG","datePublished": "2022-03-29T16:02:16+02:00",
-  "dateModified": "2022-03-29T16:02:16+02:00",
+  "image":"https://heizie.github.io/images/table_terminal/front.JPG","datePublished": "2022-04-09T16:02:16+02:00",
+  "dateModified": "2022-04-09T16:02:16+02:00",
   "author":{
     "@type": "Person",
     "name": "Haozheng Lin"
@@ -177,13 +177,54 @@
     <h1 class="post-title">
       [After Work] ESP8266 based information terminal
     </h1>
-    <div class="post-meta"><span title='2022-03-29 16:02:16 +0200 CEST'>March 29, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Haozheng Lin
+    <div class="post-meta"><span title='2022-04-09 16:02:16 +0200 CEST'>April 9, 2022</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Haozheng Lin
 
 </div>
   </header> 
-<figure class="entry-cover"><img loading="lazy" src="https://heizie.github.io/images/table_terminal/front.JPG" alt="Structure of the Manipulation System">
-        <p>Structure of the Manipulation System</p>
-</figure>
+<figure class="entry-cover"><img loading="lazy" src="https://heizie.github.io/images/table_terminal/front.JPG" alt="">
+        
+</figure><div class="toc">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#abstract" aria-label="Abstract">Abstract</a></li>
+                <li>
+                    <a href="#components" aria-label="Components">Components</a><ul>
+                        
+                <li>
+                    <a href="#oled-burn-in-protection" aria-label="OLED burn-in protection">OLED burn-in protection</a></li>
+                <li>
+                    <a href="#pull-up-resistor" aria-label="Pull-up resistor">Pull-up resistor</a></li>
+                <li>
+                    <a href="#some-dumb-things-about-the-timer-in-esphome" aria-label="Some dumb things about the timer in ESPHome">Some dumb things about the timer in ESPHome</a><ul>
+                        
+                <li>
+                    <a href="#timer" aria-label="Timer">Timer</a></li>
+                <li>
+                    <a href="#bugs-of-display-contents" aria-label="Bugs of display contents?">Bugs of display contents?</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#case" aria-label="Case">Case</a><ul>
+                        
+                <li>
+                    <a href="#first-version" aria-label="first version">first version</a></li>
+                <li>
+                    <a href="#second-version" aria-label="Second version">Second version</a></li>
+                <li>
+                    <a href="#final-version" aria-label="Final version">Final version</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><h1 id="abstract">Abstract<a hidden class="anchor" aria-hidden="true" href="#abstract">#</a></h1>
 <p>I&rsquo;ve already built a smart home system based on Home Assistant. The most important task is showing the states of both bathrooms‘ doors sensors because I don’t want to physically check them just like checking other dudes' excretion duration&hellip; And sometimes is just too lazy to take out the phone and check the next bus to the city center, or just too lazy to check the real feel temperature.</p>
 <p>There is. An ESPHome-based desktop terminal, which shows all needed information.</p>
@@ -206,61 +247,64 @@ As an alternative, Wemos D1 Mini provides a build-in pull-up resistor at pin D3 
       then:
         - if:
             condition:
-              lambda: return id(flag_dis) == 0; # use global var flag_dis to distinguish the presses
+                 // use global var flag_dis to distinguish the presses
+                lambda: return id(flag_dis) == 0;
             then:
-              - display.page.show: page1
-              - globals.set:
-                  id: flag_dis
-                  value: '1'
-              - logger.log: &quot;10s timer is set&quot;
-              - delay: 10 s
-              - display.page.show: page_off
-              - globals.set:
-                  id: flag_dis
-                  value: '0'
-              - logger.log: &quot;time's up&quot;
+                - display.page.show: page1
+                - globals.set:
+                    id: flag_dis
+                    value: '1'
+                - logger.log: &quot;10s timer is set&quot;
+                - delay: 10 s
+                - display.page.show: page_off
+                - globals.set:
+                    id: flag_dis
+                    value: '0'
+                - logger.log: &quot;time's up&quot;
             else :
-              display.page.show_next: terminal_display
+                display.page.show_next: terminal_display
 </code></pre><h3 id="bugs-of-display-contents">Bugs of display contents?<a hidden class="anchor" aria-hidden="true" href="#bugs-of-display-contents">#</a></h3>
 <p>I’ve seen an official example, which uses lambda function to determine the display content.</p>
 <pre tabindex="0"><code>display:
   - platform: ...
     # ...
     lambda: |-
-      if (id(my_binary_sensor).state) {
-        it.print(0, 0, id(my_font), &quot;state: ON&quot;);
-      } else {
-        it.print(0, 0, id(my_font), &quot;state: OFF&quot;);
-      }
-      // Shorthand:
-      it.printf(0, 0, id(my_font), &quot;State: %s&quot;, id(my_binary_sensor).state ? &quot;ON&quot; : &quot;OFF&quot;);
-</code></pre><p>My suggestion is, don’t do that. Just in my case, it will crash your program in a couple of hours. You could just simply create a new page for shutting down the display</p>
+        if (id(my_binary_sensor).state) {
+            it.print(0, 0, id(my_font), &quot;state: ON&quot;);
+        } else {
+            it.print(0, 0, id(my_font), &quot;state: OFF&quot;);
+        }
+        // Shorthand:
+        it.printf(0, 0, id(my_font), &quot;State: %s&quot;, id(my_binary_sensor).state ? &quot;ON&quot; : &quot;OFF&quot;);
+</code></pre><p>My suggestion is, <strong>don’t do that.</strong> Just in my case, it will crash your program in a couple of hours. You could just simply create a new page for shutting down the display</p>
 <pre tabindex="0"><code>display:
   - platform: ssd1306_i2c
     model: &quot;SSD1306 128x64&quot;
     id: terminal_display
     pages:
-      - id: page_off    # page to shut down the display
+        // page to shut down the display
+        - id: page_off    
         lambda: |-
             it.fill(COLOR_OFF);
-      - id: page1
+        - id: page1
         lambda: |-
             it.printf(0, 3, id(normal_font), &quot;1. Bus: %.0f min&quot;, id(display_181_frist).state);
             it.printf(0, 30, id(normal_font), &quot;2. Bus: %.0f min&quot;, id(display_181_second).state);
-      - id: page2
+        - id: page2
         lambda: |-
             it.printf(0, 2, id(normal_font), &quot;temp. %.01f°C&quot;, id(room_temperature).state);
             it.printf(0, 30, id(normal_font), &quot;humid. %.01f%%&quot;, id(room_humidity).state);
-      - id: page3
+        - id: page3
         lambda: |-
             it.printf(0, 2, id(normal_font), &quot;%s&quot;, id(weather_display).state.c_str());
             it.printf(0, 30, id(normal_font), &quot;R.F. %.01f°C&quot;, id(display_real_feel).state);
 </code></pre><h1 id="case">Case<a hidden class="anchor" aria-hidden="true" href="#case">#</a></h1>
 <h2 id="first-version">first version<a hidden class="anchor" aria-hidden="true" href="#first-version">#</a></h2>
+<p>This is some kind of over-engineered design.
 <figure>
     <img loading="lazy" src="/images/table_terminal/first_version.png" width="400"/> 
 </figure>
-
+</p>
 <h2 id="second-version">Second version<a hidden class="anchor" aria-hidden="true" href="#second-version">#</a></h2>
 <table>
 <thead>
