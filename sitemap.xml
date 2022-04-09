@@ -32,6 +32,9 @@
     <loc>https://heizie.github.io/tags/</loc>
     <lastmod>2022-04-09T16:02:16+02:00</lastmod>
   </url><url>
+    <loc>https://heizie.github.io/posts/masterthesis/</loc>
+    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
+  </url><url>
     <loc>https://heizie.github.io/tags/computer-vision/</loc>
     <lastmod>2021-12-01T10:00:00+01:00</lastmod>
   </url><url>
@@ -45,9 +48,6 @@
     <lastmod>2021-12-01T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://heizie.github.io/tags/instance-segmentation/</loc>
-    <lastmod>2021-12-01T10:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://heizie.github.io/posts/masterthesis/</loc>
     <lastmod>2021-12-01T10:00:00+01:00</lastmod>
   </url><url>
     <loc>https://heizie.github.io/tags/pytorch/</loc>
